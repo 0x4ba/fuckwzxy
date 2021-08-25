@@ -57,7 +57,6 @@ var (
 	}
 	CheckinHeader = &http.Header{
 		"Host":            {"student.wozaixiaoyuan.com"},
-		"Connection":      {"keep-alive"},
 		"content-type":    {"application/x-www-form-urlencoded"},
 		"Accept-Encoding": {"gzip,compress,br,deflate"},
 		"User-Agent":      {"Mozilla/5.0 (iPhone; CPU iPhone OS 14_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.9(0x1800092d) NetType/WIFI Language/en"},

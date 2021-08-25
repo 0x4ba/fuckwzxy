@@ -12,7 +12,12 @@ import (
 )
 
 func Login(loginInfo LoginContent) string {
-	client := &http.Client{}
+	trans := http.Transport{
+		DisableKeepAlives: true,
+	}
+	client := &http.Client{
+		Transport: &trans,
+	}
 
 	req, err := http.NewRequest("POST", fmt.Sprintf(LoginUrlTpl,
 		loginInfo.Username,
@@ -52,8 +57,12 @@ func Login(loginInfo LoginContent) string {
 }
 
 func Checkin(info CheckinContent, jwsession string) {
-	//CheckinContentTpl = `answers=%s&latitude=%s&longitude=%s&country=%s&city=%s&district=%s&province=%s&township=%s&street=%s&areacode=%s`
-	client := &http.Client{}
+	trans := http.Transport{
+		DisableKeepAlives: true,
+	}
+	client := &http.Client{
+		Transport: &trans,
+	}
 
 	u := url.Values{
 		"answers":   {utils.RandomTemperature()},
